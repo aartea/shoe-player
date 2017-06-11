@@ -1,5 +1,5 @@
-import unittest
-from songplayer import SongPlayer
+import unittest, songplayer
+from songplayer.songplayer import SongPlayer
 
 
 class TestSongPlayer(unittest.TestCase):
