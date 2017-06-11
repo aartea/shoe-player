@@ -4,12 +4,13 @@
     {% block head %}
     <title>SuperApp{% block title %}{% endblock %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="keywords" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Final project for PCC - CS003A">
+    <meta name="keywords" content="Pasadena City College, Python, Flask">
+    <meta name="author" content="Aaron Artea">
     <meta charset="utf-8">
 
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="static/css/style.css">
     <link rel="shortcut icon" href="{{ url_for('static', filename='ico/favicon.ico') }}">
     {% endblock %}
   </head>
@@ -22,14 +23,15 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">SuperApp</a>
+        <a class="navbar-brand" href="/">Shoe Player<br/><small>Music Simplified</small></a>
         <div class="nav-collapse">
           {% block navbar_right %}
           <ul class="nav navbar-nav pull-right">
             {% if not session.logged_in %}
-              <li><a href="#">Login or Signup</a></li>
+              <li><a href="#">Log in &nbsp;</a></li>
             {% else %}
-              <li><a href="#">Logout</a></li>
+              <!-- <li><a href="#">Sign up</a></li> -->
+              <li><a href="#">Log out</a></li>
             {% endif %}
           </ul>
           {% endblock %}
@@ -45,7 +47,8 @@
         <hr>
         {% block footer %}
         <footer class="footer">
-            <p>&copy; SuperApp</p>
+            <p>&copy; aartea.co</p>
+
         </footer>
         {% endblock %}
     </div>
