@@ -1,1 +1,1 @@
-web: python shoeplayer.py
+web: python shoeplayer/shoeplayer.py
