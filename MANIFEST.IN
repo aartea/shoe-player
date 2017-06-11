@@ -1,0 +1,3 @@
+graft shoeplayer/templates
+graft shoeplayer/static
+include shoeplayer/db/shoeplayer.sql

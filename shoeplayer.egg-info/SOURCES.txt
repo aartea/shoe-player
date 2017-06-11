@@ -1,0 +1,7 @@
+shoeplayer/__init__.py
+shoeplayer/shoeplayer.py
+shoeplayer.egg-info/PKG-INFO
+shoeplayer.egg-info/SOURCES.txt
+shoeplayer.egg-info/dependency_links.txt
+shoeplayer.egg-info/requires.txt
+shoeplayer.egg-info/top_level.txt
