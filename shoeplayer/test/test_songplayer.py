@@ -1,5 +1,5 @@
-import unittest, songplayer
-from songplayer.songplayer import SongPlayer
+import unittest, shoeplayer
+from songplayer import SongPlayer
 
 
 class TestSongPlayer(unittest.TestCase):
@@ -15,6 +15,7 @@ class TestSongPlayer(unittest.TestCase):
 
     def test_play_song(self):
         self.assertEqual(self.player.play_song(),True)
+
 
 if __name__ == '__main__':
     unittest.main()
