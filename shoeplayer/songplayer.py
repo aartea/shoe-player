@@ -25,20 +25,19 @@ class SongPlayer(object):
 #a song is added to a playlist, the playlist will also have a
 #relationship with the user.
 
-    def load_song(self, file_name):
-        raw_input("Please input song name: ")
+    def play_song(self):
+        file_name = raw_input("Please input song name: ")
         try:
             mixer.init()
             mixer.music.load(file_name)
+            mixer.music.play()
+            while mixer.music.get_busy():
+                time.Clock().tick(10)
         except IOError:
             print "Could not read file: ", file_name
             sys.exit
 
-    def play_song(self, song):
-        mixer.music.play(song)
 
-        while mixer.music.get_busy():
-            time.Clock().tick(10)
     # def stop_song(self, file_name)
 
     # def skip_song(self, song)
