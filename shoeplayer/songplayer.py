@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-import webbrowser, shoeplayer, pygame, os
 from user import User
 from pygame import *
 
@@ -8,18 +7,24 @@ class SongPlayer(object):
 
 #Load user definition, i.e. username with password
 #to associate playlist (and hence, related songs) to specific user.
-
-#Set of playlist operations
     def __init__(self, username):
         self.user = User(username)
         self.playlist = []
 
-    def add_to_playlist(self, song_name):
-        self.playlist.append(song_name)
+#Read all song files from a source directory and store information
+#to csv file? Or, have user load song and store it to csv..
+
+
 
 #Set of song operations
 #Other considerations for playing a song -- need to ensure input file follows PEP-263
 #Or, input file string is viable to be used.
+
+#load_song will load a song as well as store song name (path to song)
+#to csv file, as well as associate it with the user name. So when
+#a song is added to a playlist, the playlist will also have a
+#relationship with the user.
+
     def load_song(self, file_name):
         raw_input("Please input song name: ")
         try:
@@ -39,20 +44,26 @@ class SongPlayer(object):
     # def skip_song(self, song)
 
 #Search functionality
-    # def find_title(self, song)
+    # def find_title(self, song)    #regex capabilities here.
 
-    #def find_artist(self, artist)
+    #def find_artist(self, artist)  #regex capabilities here.
 
-#User specific definitions
-    #def like_song(self, song)
+##User specific definitions
+
+##Set of playlist operations
+
+    def add_to_playlist(self, song_name):
+        self.playlist.append(song_name)
+
 
     #def create_playlist(self, playlist)
 
 
     #def destroy_playlist(self, playlist)
 
-#file = "/home/aaron/Downloads/08_Hold_On_We_re_Going_Home_Ft_Majid_Jordan.ogg"
+#User can like a song and it will be stored as their preference
+#Reminder: under favorite song (ie 'like') of type boole, either true, false, or empty
+#if empty, no preference and song will be played; else, if true, song will be played,
+#else, if false, song will be skipped!
 
-songplayer = SongPlayer("Aaron")
-load_song = songplayer.load_song(file)
-songplayer.play_song(load_song)
+    #def like_song(self, song)
