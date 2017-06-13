@@ -1,5 +1,5 @@
-import unittest, user
-from user import User
+import unittest, shoeplayer
+from shoeplayer.user import User
 
 class UserTest(unittest.TestCase):
 
