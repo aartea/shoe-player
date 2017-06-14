@@ -25,6 +25,7 @@ class SongPlayer(object):
 #a song is added to a playlist, the playlist will also have a
 #relationship with the user.
 
+#Need a better way to play with effective path of song.
     def play_song(self):
         file_name = raw_input("Please input song name: ")
         try:
