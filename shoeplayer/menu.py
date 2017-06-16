@@ -1,8 +1,10 @@
 #"Inspired from Cengage Fundamentals of Python"
 from songplayer import SongPlayer
-from pygame import *
+import pygame as pg
+
 
 class Menu(object):
+
     QUIT = '7'
     COMMANDS = ('1','2','3','4','5','6')
 
@@ -19,6 +21,7 @@ class Menu(object):
 
     def __init__(self, username):
         self.songplayer = SongPlayer(username)
+
         print"\n"
         print "Shoe Player: Music Simplified"
         while True:
@@ -41,6 +44,8 @@ class Menu(object):
                 return self.command
 
     def run_command(self, command):
+
+
         if self.command == '1':
             #search song by Title
             print 'Option  1'
@@ -49,7 +54,7 @@ class Menu(object):
             print 'Option 2'
         elif self.command == '3':
             #skip song
-            print 'Option  3'
+            self.songplayer.skip_song()
         elif self.command == '4':
             #like or dislike song
             print 'Option  4'
@@ -59,9 +64,9 @@ class Menu(object):
         elif self.command == '6':
             # play a song
             self.songplayer.play_song()
-            while mixer.music.get_busy():
+            while pg.mixer.music.get_busy():
                 self.menu_display()
                 if self.command == self.QUIT:
                     self.songplayer.stop_song
                     break
-                time.Clock().tick(0)
+                pg.time.Clock().tick(0)

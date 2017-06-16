@@ -1,14 +1,19 @@
 # -*- coding: utf-8 -*-
+import sys
+import pygame as pg
 from user import User
-from pygame import *
+from song import Song
 #from progress.bar import Bar #Progress bar for UI
 
+TRACKS = ["/home/aaron/Desktop/github/shoe-player/shoe-player/shoeplayer/resources/media/Hold_On_We_re_Going_Home_Ft_Majid_Jordan.ogg"\
+            ,"/home/aaron/Desktop/github/shoe-player/shoe-player/shoeplayer/resources/media/Wu-Tang_Forever.ogg"]
+track = 0
 
 class SongPlayer(object):
-
 #Load user definition, i.e. username with password
 #to associate playlist (and hence, related songs) to specific user.
     def __init__(self, username):
+        pg.init()
         self.user = User(username)
         self.playlist = []
 
@@ -30,18 +35,25 @@ class SongPlayer(object):
     def play_song(self):
         file_name = raw_input("Please input song name: ")
         try:
-            mixer.init()
-            mixer.music.load(file_name)
-            mixer.music.play()
+            pg.mixer.init()
+            pg.mixer.music.load(file_name)
+            pg.mixer.music.play()
+            self.song.set_song_path(file_name)
         except IOError:
             print "Could not read file: ", file_name
             sys.exit
 
 
     def stop_song(self):
-        pygame.quit()
+        pg.quit()
 
-    # def skip_song(self, song)
+    def skip_song(self):
+        self.stop_song()
+        next_track = (track + 1)%len(TRACKS)
+        pg.mixer.init()
+        pg.mixer.music.load(TRACKS[next_track])
+        pg.mixer.music.play()
+
 
 #Search functionality
     # def find_title(self, song)    #regex capabilities here.
