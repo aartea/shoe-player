@@ -22,14 +22,17 @@ class Menu(object):
         print"\n"
         print "Shoe Player: Music Simplified"
         while True:
-            print self.MENU
-            command = self.userCommand()
-            self.runCommand(command)
+            self.menu_display()
             if self.command == self.QUIT:
                 print 'Exited shoe player.'
                 break
 
-    def userCommand(self):
+    def menu_display(self):
+        print self.MENU
+        command = self.user_command()
+        self.run_command(command)
+
+    def user_command(self):
         while True:
             self.command = raw_input("Enter selection: ")
             if not self.command in self.COMMANDS and not self.command in self.QUIT:
@@ -37,7 +40,7 @@ class Menu(object):
             else:
                 return self.command
 
-    def runCommand(self, command):
+    def run_command(self, command):
         if self.command == '1':
             #search song by Title
             print 'Option  1'
@@ -57,9 +60,7 @@ class Menu(object):
             # play a song
             self.songplayer.play_song()
             while mixer.music.get_busy():
-                print self.MENU
-                command = self.userCommand()
-                self.runCommand(command)
+                self.menu_display()
                 if self.command == self.QUIT:
                     self.songplayer.stop_song
                     break
