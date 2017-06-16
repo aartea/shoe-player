@@ -14,5 +14,6 @@ Use app.py for program entry!
 
 &nbsp;
 ### Would likes:
-##### -App to be hosted on heroku (can be found at http://shoe-player.herokuapp.com/)
+##### -A complete WebApp to be hosted on heroku (can be found at http://shoe-player.herokuapp.com/) with rich GUI 
+##### that uses Flask and HTML5 and CSS3. And simple authentication!
 > Work in progress!
