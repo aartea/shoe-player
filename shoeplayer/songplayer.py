@@ -5,6 +5,7 @@ from user import User
 from song import Song
 #from progress.bar import Bar #Progress bar for UI
 
+#Test tracks
 TRACKS = ["/home/aaron/Desktop/github/shoe-player/shoe-player/shoeplayer/resources/media/Hold_On_We_re_Going_Home_Ft_Majid_Jordan.ogg"\
             ,"/home/aaron/Desktop/github/shoe-player/shoe-player/shoeplayer/resources/media/Wu-Tang_Forever.ogg"]
 track = 0

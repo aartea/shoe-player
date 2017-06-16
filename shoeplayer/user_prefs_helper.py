@@ -1,8 +1,13 @@
 '''
-Program Title: log_in_helper.py
+Program Title: user_prefs_helper.py
 Author: Aaron A
 Program Description: Convert CSV objects to JSON readable format.
 
+This helper class will store user preferences.
+
+A second helper class will be created to read the user preferences from
+this class' generated csv as soon as the log-in and password has been
+verified (see: log_in_helper.py)
 
 '''
 import csv

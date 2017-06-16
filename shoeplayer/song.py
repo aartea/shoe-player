@@ -1,6 +1,7 @@
 class Song(object):
-    def __init__(self, song):
+    def __init__(self):
         self.song = song
+        self.file_path = file_path
 
 #Set mutators and accessors for song
 
