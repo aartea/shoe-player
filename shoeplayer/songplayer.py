@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 from user import User
 from pygame import *
+#from progress.bar import Bar #Progress bar for UI
 
 
 class SongPlayer(object):
@@ -32,14 +33,13 @@ class SongPlayer(object):
             mixer.init()
             mixer.music.load(file_name)
             mixer.music.play()
-            while mixer.music.get_busy():
-                time.Clock().tick(10)
         except IOError:
             print "Could not read file: ", file_name
             sys.exit
 
 
-    # def stop_song(self, file_name)
+    def stop_song(self):
+        pygame.quit()
 
     # def skip_song(self, song)
 
